@@ -26,18 +26,22 @@ public class JsonRestController {
         Iterable<Station> stations = stationDAO.findByTransitNetworkName(transitNetworkName);
 
         int i = 0;
-        String csv="";
+        String stationJson="stations:[";
         for(Station station: stations){
-            csv = csv.concat(station.getCity());
-            csv = csv.concat(","+station.getGps1());
-            csv = csv.concat(","+station.getGps2());
-            csv = csv.concat(","+station.getLine());
-            csv = csv.concat(","+station.getStationAddress());
-            csv = csv.concat(","+station.getStationName());
-            csv = csv.concat("<br>");
+            stationJson = stationJson.concat("{");
+            stationJson = stationJson.concat("\"station_name\":\""+station.getStationName()+"\",");
+            stationJson = stationJson.concat("\"station_address\":\""+station.getStationName()+"\",");
+            stationJson = stationJson.concat("\"station_line\":\""+station.getLine()+"\",");
+            stationJson = stationJson.concat("\"gps1\":"+station.getGps1()+",");
+            stationJson = stationJson.concat("\"gps2\":"+station.getGps2()+);
+            stationJson = stationJson.concat("},");
             i++;
         }
+        
+        stationJson = stationJson.substring(0, stationJson.length()-1);
+        stationJson = stationJson.concat("]");
 
-        return csv;
+        System.out.println(stationJson);
+        return stationJson;
     }
 }
