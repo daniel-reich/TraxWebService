@@ -26,7 +26,7 @@ public class JsonRestController {
         Iterable<Station> stations = stationDAO.findByTransitNetworkName(transitNetworkName);
 
         int i = 0;
-        String stationJson="\"stations\":[";
+        String stationJson="{\"stations\":[";
         for(Station station: stations){
             stationJson = stationJson.concat("{");
             stationJson = stationJson.concat("\"station_name\":\""+station.getStationName()+"\",");
@@ -39,7 +39,7 @@ public class JsonRestController {
         }
 
         stationJson = stationJson.substring(0, stationJson.length()-1);
-        stationJson = stationJson.concat("]");
+        stationJson = stationJson.concat("]}");
 
         return stationJson;
     }
