@@ -33,15 +33,14 @@ public class JsonRestController {
             stationJson = stationJson.concat("\"station_address\":\""+station.getStationName()+"\",");
             stationJson = stationJson.concat("\"station_line\":\""+station.getLine()+"\",");
             stationJson = stationJson.concat("\"gps1\":"+station.getGps1()+",");
-            stationJson = stationJson.concat("\"gps2\":"+station.getGps2()+);
+            stationJson = stationJson.concat("\"gps2\":"+station.getGps2());
             stationJson = stationJson.concat("},");
             i++;
         }
-        
+
         stationJson = stationJson.substring(0, stationJson.length()-1);
         stationJson = stationJson.concat("]");
 
-        System.out.println(stationJson);
         return stationJson;
     }
 }
