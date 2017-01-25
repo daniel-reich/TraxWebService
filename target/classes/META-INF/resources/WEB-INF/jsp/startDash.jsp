@@ -22,9 +22,7 @@ Hello Web Service
     </tr>
     <c:forEach var="network" items="${transitNetworkList}">
         <tr>
-            <td><c:out value="${network.transitNetworkName}" /></td>
-            <th> | </th>
-            <td><c:out value="${network.city}" /></td>
+            <td> <a href="/viewTransitNetwork?transitNetworkName=${network.transitNetworkName}"><c:out value="${network.transitNetworkName}" /></a></td>
             <th> | </th>
             <td><c:out value="${network.lines}" /></td>
             <th> | </th>

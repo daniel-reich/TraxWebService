@@ -20,11 +20,15 @@
     <br>
     Line: <input type ="text" name="line">
     <br>
-    GSP1: <input type="number" name="gps1" required/>
+    Lat1: <input type="number" name="lat1" step="any" required/>
     <br>
-    GSP2: <input type="number" name="gps2" required/>
+    Long1: <input type="number" name="long1" step="any" required/>
     <br>
-    <input type="submit" value="Save Employee"/>
+    Lat2: <input type="number" name="lat2" step="any" required/>
+    <br>
+    Long2: <input type="number" name="long2" step="any" required/>
+    <br>
+    <input type="submit" value="Save Station"/>
 </form>
 
 <a href="/">View Dashboard</a><br>

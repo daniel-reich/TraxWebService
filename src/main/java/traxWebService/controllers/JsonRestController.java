@@ -32,8 +32,10 @@ public class JsonRestController {
             stationJson = stationJson.concat("\"station_name\":\""+station.getStationName()+"\",");
             stationJson = stationJson.concat("\"station_address\":\""+station.getStationName()+"\",");
             stationJson = stationJson.concat("\"station_line\":\""+station.getLine()+"\",");
-            stationJson = stationJson.concat("\"gps1\":"+station.getGps1()+",");
-            stationJson = stationJson.concat("\"gps2\":"+station.getGps2());
+            stationJson = stationJson.concat("\"lat1\":"+station.getLat1()+",");
+            stationJson = stationJson.concat("\"long1\":"+station.getLong1()+",");
+            stationJson = stationJson.concat("\"lat2\":"+station.getLat2()+",");
+            stationJson = stationJson.concat("\"long2\":"+station.getLong2());
             stationJson = stationJson.concat("},");
             i++;
         }

@@ -54,16 +54,25 @@ public class StartupDashboard {
     }
 
     @RequestMapping(value = "saveStation")
-    public String saveStation(String city, double gps1, double gps2, String line, String stationAddress, String stationName, String transitNetworkName){
+    public String saveStation(String city, double lat1, double long1, double long2, double lat2, String line, String stationAddress, String stationName, String transitNetworkName){
         Station station = new Station();
         station.setCity(city);
-        station.setGps1(gps1);
-        station.setGps2(gps2);
+        station.setLat1(lat1);
+        station.setLong1(long1);
+        station.setLat2(lat2);
+        station.setLong2(long2);
         station.setLine(line);
         station.setStationAddress(stationAddress);
         station.setStationName(stationName);
         station.setTransitNetworkName(transitNetworkName);
         stationDAO.save(station);
         return "addStation";
+    }
+
+    @RequestMapping(value = "viewTransitNetwork")
+    public String saveStation(String transitNetworkName, Model model){
+        Iterable<Station> stations = stationDAO.findByTransitNetworkName(transitNetworkName);
+        model.addAttribute("stations", stations);
+        return "viewTransitNetwork";
     }
 }
