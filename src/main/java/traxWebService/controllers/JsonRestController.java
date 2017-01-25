@@ -29,6 +29,7 @@ public class JsonRestController {
         String stationJson="{\"stations\":[";
         for(Station station: stations){
             stationJson = stationJson.concat("{");
+            stationJson = stationJson.concat("\"station_id\":"+station.getStationId()+",");
             stationJson = stationJson.concat("\"station_name\":\""+station.getStationName()+"\",");
             stationJson = stationJson.concat("\"station_address\":\""+station.getStationAddress()+"\",");
             stationJson = stationJson.concat("\"station_line\":\""+station.getLine()+"\",");
