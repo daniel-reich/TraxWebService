@@ -33,5 +33,6 @@ Hello Web Service
 </table>
 
 <a href="/addStation">Add Station</a><br>
+<a href="/goToUploader"> Upload CSV file</a>
 </body>
 </html>
